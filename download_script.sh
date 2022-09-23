@@ -1,12 +1,12 @@
 #!/bin/bash
 
+URL_LIST=./url_list.txt
 
-VIDEO_URL=(
-"https://www.youtube.com/watch?v=MP5jeeOPix0"
-"https://www.youtube.com/watch?v=hg_XaJIFVpk"
-"https://www.youtube.com/watch?v=fG44VOFwLsA"
-"https://www.youtube.com/watch?v=H9USwoA_Qks"
-)
+VIDEO_URL=()
+while IFS= read -r line; do
+  VIDEO_URL+=("$line")
+done < ${URL_LIST}
+
 
 
 EXPORT_DIR=downloaded_videos
